@@ -1,0 +1,10 @@
+com.microsoft.windows.system.forms
+org.sibermatica.annotations
+org.sibermatica.io
+org.sibermatica.jah.util
+org.sibermatica.lang
+org.sibermatica.network.mail
+org.sibermatica.network.mail.client
+org.sibermatica.network.mail.server
+org.sibermatica.util
+org.sibermatica.util.logging
