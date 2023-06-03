@@ -23,7 +23,7 @@ public final class Logger {
     /**
      * Default format of the log messages.
      * */
-    public static final String DEFAULT_FORMAT = "[${HOUR_24}:${MINUTE}:${SECOND}] [${CLASS}/$Upper{LOGGING_LEVEL}]: ${MESSAGE}";
+    public static final String DEFAULT_FORMAT = "[${HOUR_24}:${MINUTE}:${SECOND}] [${CLASS_SIMPLE_NAME}/$Upper{LOGGING_LEVEL}]: ${MESSAGE}";
 
     /**
      * Formats of the log messages.
@@ -88,6 +88,14 @@ public final class Logger {
         formatted = formatted.replace("${CLASS}", clss.getName());
         formatted = formatted.replace("$Upper{CLASS}", clss.getName().toUpperCase());
         formatted = formatted.replace("$Lower{CLASS}", clss.getName().toLowerCase());
+
+        formatted = formatted.replace("${CLASS_SIMPLE_NAME}", clss.getSimpleName());
+        formatted = formatted.replace("$Upper{CLASS_SIMPLE_NAME}", clss.getSimpleName().toUpperCase());
+        formatted = formatted.replace("$Lower{CLASS_SIMPLE_NAME}", clss.getSimpleName().toLowerCase());
+
+        formatted = formatted.replace("${CLASS_CANONICAL_NAME}", clss.getCanonicalName());
+        formatted = formatted.replace("$Upper{CLASS_CANONICAL_NAME}", clss.getCanonicalName().toUpperCase());
+        formatted = formatted.replace("$Lower{CLASS_CANONICAL_NAME}", clss.getCanonicalName().toLowerCase());
 
         formatted = formatted.replace("${LOGGING_LEVEL}", level.toString());
         formatted = formatted.replace("$Upper{LOGGING_LEVEL}", level.toString().toUpperCase());
