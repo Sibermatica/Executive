@@ -116,11 +116,34 @@ public final class Logger {
      * and classes.
      *
      * @param message The message to log.
+     * @param level The level of the message.
+     * @param clss The class that's logged it.
+     * */
+    public void log(Level level, String message, Class<?> clss) {
+        this.log(level, message, new Date(), clss.getClass());
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
      * @param timestamp The timestamp when log is made.
      * @param clss The class that's logged it.
      * */
     public void info(String message, Date timestamp, Class<?> clss) {
         this.log(Level.INFO, message, timestamp, clss);
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
+     * @param clss The class that's logged it.
+     * */
+    public void info(String message, Class<?> clss) {
+        this.info(message, new Date(), clss);
     }
 
     /**
@@ -140,11 +163,33 @@ public final class Logger {
      * and classes.
      *
      * @param message The message to log.
+     * @param clss The class that's logged it.
+     * */
+    public void warn(String message, Class<?> clss) {
+        this.warn(message, new Date(), clss);
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
      * @param timestamp The timestamp when log is made.
      * @param clss The class that's logged it.
      * */
     public void error(String message, Date timestamp, Class<?> clss) {
         this.log(Level.SEVERE, message, timestamp, clss);
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
+     * @param clss The class that's logged it.
+     * */
+    public void error(String message, Class<?> clss) {
+        this.error(message, new Date(), clss);
     }
 
     /**
@@ -164,11 +209,33 @@ public final class Logger {
      * and classes.
      *
      * @param message The message to log.
+     * @param clss The class that's logged it.
+     * */
+    public void debug(String message, Class<?> clss) {
+        this.debug(message, new Date(), clss);
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
      * @param timestamp The timestamp when log is made.
      * @param clss The class that's logged it.
      * */
     public void technical(String message, Date timestamp, Class<?> clss) {
         this.log(Level.FINER, message, timestamp, clss);
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
+     * @param clss The class that's logged it.
+     * */
+    public void technical(String message, Class<?> clss) {
+        this.technical(message, new Date(), clss);
     }
 
     /**
@@ -188,6 +255,17 @@ public final class Logger {
      * and classes.
      *
      * @param message The message to log.
+     * @param clss The class that's logged it.
+     * */
+    public void engineering(String message, Class<?> clss) {
+        this.engineering(message, new Date(), clss);
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
      * @param timestamp The timestamp when log is made.
      * @param clss The class that's logged it.
      * */
@@ -200,11 +278,33 @@ public final class Logger {
      * and classes.
      *
      * @param message The message to log.
+     * @param clss The class that's logged it.
+     * */
+    public void all(String message, Class<?> clss) {
+        this.all(message, new Date(), clss);
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
      * @param timestamp The timestamp when log is made.
      * @param clss The class that's logged it.
      * */
     public void config(String message, Date timestamp, Class<?> clss) {
         this.log(Level.CONFIG, message, timestamp, clss);
+    }
+
+    /**
+     * Logs the given message to the system console.  Can handle timestamps
+     * and classes.
+     *
+     * @param message The message to log.
+     * @param clss The class that's logged it.
+     * */
+    public void config(String message, Class<?> clss) {
+        this.config(message, new Date(), clss);
     }
 
     /**
