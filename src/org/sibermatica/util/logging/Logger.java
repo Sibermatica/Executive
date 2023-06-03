@@ -1,5 +1,7 @@
 package org.sibermatica.util.logging;
 
+import org.sibermatica.util.StringUtils;
+
 import java.io.OutputStream;
 import java.util.Date;
 import java.util.logging.Level;
@@ -79,10 +81,10 @@ public final class Logger {
         formatted = formatted.replace("${HOUR_12}", (timestamp.getHours() - 12 < 0 ? (timestamp.getHours() + " AM") : (timestamp.getHours() - 12 + " PM")));
 
         /* Minutes */
-        formatted = formatted.replace("${MINUTE}", Integer.valueOf(timestamp.getMinutes()).toString());
+        formatted = formatted.replace("${MINUTE}", StringUtils.padStart(Integer.valueOf(timestamp.getMinutes()).toString(), 2, "0"));
 
         /* Seconds */
-        formatted = formatted.replace("${SECOND}", Integer.valueOf(timestamp.getSeconds()).toString());
+        formatted = formatted.replace("${SECOND}", StringUtils.padStart(Integer.valueOf(timestamp.getSeconds()).toString(), 2, "0"));
 
         /* Threads */
         formatted = formatted.replace("${CLASS}", clss.getName());
