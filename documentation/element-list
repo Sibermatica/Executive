@@ -1,8 +1,11 @@
 com.microsoft.windows.system.forms
 org.sibermatica.annotations
 org.sibermatica.io
+org.sibermatica.io.binary
+org.sibermatica.io.drivers
 org.sibermatica.jah.util
 org.sibermatica.lang
+org.sibermatica.math
 org.sibermatica.network.mail
 org.sibermatica.network.mail.client
 org.sibermatica.network.mail.server

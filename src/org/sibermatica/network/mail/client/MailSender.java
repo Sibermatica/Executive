@@ -3,30 +3,72 @@ package org.sibermatica.network.mail.client;
 import org.sibermatica.network.mail.Email;
 import org.sibermatica.network.mail.server.MailServer;
 
-import java.io.OutputStream;
 import java.net.Socket;
+import java.util.Map;
 
-public class MailSender {
+/**
+ * <h1>MailSender</h1>
+ * It is used to send client emails.
+ *
+ * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
+ * @since 1.3
+ * */
+public abstract class MailSender {
 
-    public static void send(Email email, Object[] user_data, Object[] server_data) throws RuntimeException {
-        if (!MailServer.validate(server_data))
-            throw new RuntimeException("Invalid server data");
+    /* Methods */
 
+    /**
+     * Sends an email.
+     *
+     * @param email the email to send.
+     * @param server the mail server to use.
+     *
+     * @throws UnsupportedOperationException if the server is not valid.
+     * @apiNote We recommend creating a new class that inherits from this class.
+     * */
+    public static void send(Email email, MailServer server)
+            throws UnsupportedOperationException {
+
+        /* Check server validation */
+
+        if (!MailServer.validate(server))
+            throw new IllegalArgumentException("Invalid server data");
+
+        if (email == null)
+            throw new IllegalArgumentException("Email cannot be null");
+
+        if (email.getFrom().contains("\\")
+                || email.getTo().contains("\\")
+                || email.getSubject().contains("\\"))
+            throw new IllegalArgumentException("Email cannot contain slash bars");
+
+        /* -------------------------------- */
+
+        /* Sets server properties */
+        int port = (int) server.get().get("port");
+        String host = (String) server.get().get("host");
+
+        /* Sender thread */
         try {
-            Socket socket = new Socket((String) server_data[0], (Integer) server_data[1]);
-            StringBuilder bytes = new StringBuilder();
+            /* Creating communication socket */
+            Socket socket = new Socket(host, port);
 
-            bytes.append(email.getFrom().concat("\n"));      // HEADER
-            bytes.append(email.getTo().concat("\n"));        // HEADER
-            bytes.append(email.getSubject().concat("\n"));   // BODY
-            bytes.append(email.getBody().toString());           // BODY
+            /* Email message header */
+            byte[] bytes = (email.getFrom() + "\\" +
+                    email.getTo() + "\\" +
+                    email.getSubject() + ":\n" +
+                    email.getBody().toString()).getBytes();
 
-            socket.getOutputStream().write(bytes.toString().getBytes());
+            /* Writing and sending mail */
+            socket.getOutputStream().write(bytes);
             socket.getOutputStream().flush();
 
+            /* Ending the connection */
             socket.close();
         } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
+
+            // In case of any error, we throw an exception
+            throw new UnsupportedOperationException(e.getMessage());
         }
     }
 

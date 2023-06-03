@@ -16,7 +16,10 @@ import java.nio.charset.StandardCharsets;
  * @see java.io.OutputStream
  *
  * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
- *
+ * @apiNote If you want to use binary data or more complex object
+ *   storaging you should use {@linkplain java.io.ObjectOutputStream} and {@linkplain java.io.ObjectInputStream}.
+ *   One more complement for working with binary data. {@linkplain org.sibermatica.io.binary.Binary}
+ * @see org.sibermatica.io.binary.Binary
  * */
 
 public class ObjectWriter<T> {

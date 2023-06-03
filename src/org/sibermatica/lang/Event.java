@@ -42,7 +42,7 @@ public class Event implements Eventualizable {
 
 
     /**
-     * Cannot be instantiated.
+     * Don't let anyone instantiate this class.
      * */
     private Event() {
         LOG_EVENT = false;

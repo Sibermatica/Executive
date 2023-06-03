@@ -1,15 +1,46 @@
 package org.sibermatica.util;
 
+/**
+ * <h1>StringUtils</h1>
+ * This class it's used to handle strings
+ *
+ * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
+ * @since 1.2
+ * */
 public class StringUtils {
-	
+
+	/* Inner classes */
+
+	/**
+	 * <h1>Color</h1>
+	 * This class it's used to colorizing strings.  It's works with ANSI escape codes.
+	 * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
+	 * @since 1.2
+	 * @apiNote ANSI escape codes not have high compatibility.
+	 * */
 	public static class Color {
+
+		/* Variables */
 		
 		public static final String RESET = "\u001B[0m";
+
+		/* Methods */
+
+		/**
+		 * This methods it's used to reset color to default value.
+		 * @param text the text to reset color
+		 * @return No-color string
+		 * */
 		public static String resetColor(String text) {
 			return RESET.concat(text);
 		}
+
+		/* More Inner classes */
 		
 		public static class Foreground {
+
+			/* Variables */
+
 		    public static final String BLACK = "\u001B[30m";
 		    public static final String RED = "\u001B[31m";
 		    public static final String GREEN = "\u001B[32m";
@@ -18,6 +49,11 @@ public class StringUtils {
 		    public static final String PURPLE = "\u001B[35m";
 		    public static final String CYAN = "\u001B[36m";
 		    public static final String WHITE = "\u001B[37m";
+
+			/* Methods */
+
+			// Ayo! There a lot of methods.
+			// Please help me to comment them.
 		    
 		    public static String insertBLACK(String text) {
 		    	return BLACK.concat(text) + RESET;
@@ -54,7 +90,9 @@ public class StringUtils {
 		}
 
 	    public static class Background {
-	    	
+
+			/* Variables */
+
 	        public static final String BLACK = "\u001B[40m";
 	        public static final String RED = "\u001B[41m";
 	        public static final String GREEN = "\u001B[42m";
@@ -64,7 +102,10 @@ public class StringUtils {
 	        public static final String CYAN = "\u001B[46m";
 	        public static final String WHITE = "\u001B[47m";
 
-	        
+			/* Methods */
+
+			// Not now...
+
 	        public static String insertBLACK(String text) {
 	        	return BLACK.concat(text) + RESET;
 	        }
@@ -100,11 +141,23 @@ public class StringUtils {
 	    }
 		
 	}
-	
+
+	/**
+	 * Quits all the white spaces in a string.
+	 *
+	 * @param text the string to trim
+	 * @return the string without spaces
+	 * */
 	public static String trimAll(String text) {
 		return text.replaceAll(" ", "");
 	}
 
+	/**
+	 * Add padding to a string.
+	 *
+	 * @param text the string to pad
+	 * @return the string with padding
+	 * */
 	public static String padStart(String text, int maxLength, String fillString) {
 		while(text.length() < maxLength) {
 			text = fillString.concat(text);
@@ -113,6 +166,12 @@ public class StringUtils {
 		return text;
 	}
 
+	/**
+	 * Add padding to a string.
+	 *
+	 * @param text the string to pad
+	 * @return the string with padding
+	 * */
 	public static String padEnd(String text, int maxLength, String fillString) {
 		while(text.length() < maxLength) {
 			text = text.concat(fillString);
@@ -121,16 +180,32 @@ public class StringUtils {
 		return text;
 	}
 
+	/**
+	 * @apiNote Honestly, this method is ridiculous.
+	 * */
+	@Deprecated( forRemoval = true )
 	public static String ToString(String str) {
 		return str;
 	}
-	
-	public static Integer ToInteger(String str)
+
+	/**
+	 * Converts the given string to an integer number.
+	 *
+	 * @param str the string to convert
+	 * @return the integer number
+	 * */
+	public static Integer toInteger(String str)
 			throws NumberFormatException {
 		return Integer.parseInt(str);
 	}
-	
-	public static Boolean ToBoolean(String str) {
+
+	/**
+	 * Converts the given string to a boolean value.
+	 *
+	 * @param str the string to convert
+	 * @return the boolean value
+	 * */
+	public static Boolean toBoolean(String str) {
 		return switch (str) {
 			case "1", "true", "yes", "si" -> true;
 			default -> false;

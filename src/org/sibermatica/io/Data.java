@@ -23,11 +23,14 @@ package org.sibermatica.io;
  * @since 1.0
  * */
 public class Data {
+
+    /**
+     * Bytes storaged in memory.
+     * */
     private long bytes;
 
     /**
-     * For NOT being instantiated
-     * @see java.lang.System#System()
+     * Don't let anyone instantiate this class.
      * */
     private Data() {
 
@@ -35,7 +38,7 @@ public class Data {
 
     /**
      * Generates a null/invalid Data instance.<br>
-     * <strong>ONLY FOR TESTS</strong>
+     * <strong>WARNING: Only for tests</strong>
      * */
     public static Data nullInstance() {
         return new Data();
@@ -56,14 +59,40 @@ public class Data {
         this.bytes = bytes;
     }
 
-    public static final long BYTE_LEVEL = 1024; // Byte unit equals 1024
-    public static final long BIT_LEVEL = 1000; // Bit unit equals 1000
+    /**
+     * Byte unit equals 1024.
+     * */
+    public static final long BYTE_LEVEL = 1024;
 
-    public static final int KILO = 1; // Kilobyte is the first unit
-    public static final int MEGA = 2; // Mega is the second unit
-    public static final int GIGA = 3; // Giga is the third unit
-    public static final int TERA = 4; // Tera is the fourth unit
-    public static final int PETA = 5; // Peta is the fifth unit
+    /**
+     * Bit unit equals 1000.
+     * */
+    public static final long BIT_LEVEL = 1000;
+
+    /**
+     * Kilobyte is the first unit.
+     * */
+    public static final int KILO = 1;
+
+    /**
+     * Mega is the second unit.
+     * */
+    public static final int MEGA = 2;
+
+    /**
+     * Giga is the third unit.
+     * */
+    public static final int GIGA = 3;
+
+    /**
+     * Tera is the fourth unit.
+     * */
+    public static final int TERA = 4;
+
+    /**
+     * Peta is the fifth unit.
+     * */
+    public static final int PETA = 5;
 
     /**
      * Instances a Data instance with the selected number of bytes that represents the instance value on bytes.

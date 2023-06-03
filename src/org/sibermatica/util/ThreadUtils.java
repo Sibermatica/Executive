@@ -15,6 +15,7 @@ public class ThreadUtils {
 
     /**
      * Cancel the application execution with a custom status code.
+     * 
      * @param status the status code
      * @see java.lang.System#exit(int)
      * */
@@ -33,6 +34,7 @@ public class ThreadUtils {
 
     /**
      * Sleep current thread for a specified amount of time in milliseconds.
+     *
      * @param millis the amount of time in milliseconds
      * @return an integer, if the sleep was sucessful 0, -1 otherwise
      * @see java.lang.Thread#sleep(long)

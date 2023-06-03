@@ -6,6 +6,17 @@ import static org.sibermatica.math.Numbers.extractDecimal;
 import static org.sibermatica.math.Numbers.extractInteger;
 import static org.sibermatica.util.Cast.toByte;
 
+/**
+ * <h1>ByteDecimal</h1>
+ * It converts a float or double to a byte.  And stores a decimal number
+ * in 255 bits.
+ * Pretty good. True?
+ *
+ * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
+ * @since 1.3
+ * @apiNote It is used in 8 bit video-games for storage lives
+ *   or other game data.
+ * */
 public class ByteDecimal {
 
     /**

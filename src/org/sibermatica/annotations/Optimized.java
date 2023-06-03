@@ -1,7 +1,7 @@
 package org.sibermatica.annotations;
 
-public @interface Optimized {
-
-    boolean tested() default true;
-
-}
+/**
+ * <h1>Optimized</h1>
+ * This annotation is used to mark a class as optimized.
+ * */
+public @interface Optimized {}

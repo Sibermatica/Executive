@@ -1,4 +1,4 @@
-package com.microsoft.windows.system.forms;
+package org.sibermatica.lang;
 
 import java.awt.*;
 
@@ -10,7 +10,7 @@ import java.awt.*;
  *
  * @see java.awt
  * @see javax.swing
- * <a href="mailtocirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
+ * @author <a href="mailtocirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
  * @since 1.0
  * @version 1.0
  */

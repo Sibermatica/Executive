@@ -8,6 +8,7 @@ import javax.xml.parsers.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 /**
  * <h1>Cast</h1>
@@ -17,7 +18,10 @@ import java.io.InputStream;
  * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
  * @since 1.0
  * */
-public class Cast {
+public final class Cast {
+
+    private Cast() {
+    }
 
     public static Document toDocument(String parsed_xml) throws IOException, SAXException, ParserConfigurationException {
         /* Creating W3C Instances */
@@ -39,7 +43,7 @@ public class Cast {
 
         // Checksum
         if (!toString(x).equals(toString(result)))
-            throw new NumberFormatException("Cannot convert");
+            throw new NumberFormatException("cannot convert");
 
         return result;
     }
@@ -56,6 +60,19 @@ public class Cast {
 
     public static String toString(int x) {
         return String.valueOf(x);
+    }
+
+    /**
+     * Converts an array of any type to another array type.
+     *
+     * @param array The array to convert.
+     * @param type The type to convert to.
+     * @return The converted array.
+     * */
+
+    public static <T> T[] toArray(T[] type, Object[] array) {
+        // Make a new array of a's runtime type, but my contents:
+        return (T[]) Arrays.copyOf(array, array.length, type.getClass());
     }
 
 }
