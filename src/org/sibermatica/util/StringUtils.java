@@ -181,14 +181,6 @@ public class StringUtils {
 	}
 
 	/**
-	 * @apiNote Honestly, this method is ridiculous.
-	 * */
-	@Deprecated( forRemoval = true )
-	public static String ToString(String str) {
-		return str;
-	}
-
-	/**
 	 * Converts the given string to an integer number.
 	 *
 	 * @param str the string to convert
@@ -212,5 +204,76 @@ public class StringUtils {
 		};
 	}
 
+	/**
+	 * Adds a new line to a string with the type of the
+	 * new line, you can select Linux or Unix, Macintosh or macOS and Windows.
+	 *
+	 * @param str the string to add a new line
+	 * @param type the type of the new line
+	 *
+	 * @return the string with the new line added
+	 * */
+	public static String addNewLine(String str, String type) {
+		return str + switch (type) {
+			case "Macintosh", "macOS" -> "\r";
+			// I don't add Linux and Unix because the default branch have the same line return
+			case "Windows" -> "\r\n";
+			default -> "\n"; // Includes Linux and Unix...
+		};
+	}
+
+	/**
+	 * Adds a new line to a string with the type of the
+	 * new line, you can select Linux or Unix, Macintosh or macOS and Windows.
+	 *
+	 * @param aByte the array bytes to add a new line
+	 * @param type the type of the new line
+	 *
+	 * @return the byte array with the new line added
+	 * */
+	public static byte[] addNewLine(byte[] aByte, String type) {
+		return (new String(aByte) + switch (type) {
+			case "Macintosh", "macOS" -> "\r";
+			// I don't add Linux and Unix because the default branch have the same line return
+			case "Windows" -> "\r\n";
+			default -> "\n"; // Includes Linux and Unix...
+		}).getBytes();
+	}
+
+	/**
+	 * Adds a new line to a string with the type of the
+	 * new line, you can select Linux or Unix, Macintosh or macOS and Windows.
+	 *
+	 * @param aChar the string to add a new line
+	 * @param type the type of the new line
+	 *
+	 * @return the char array with the new line added
+	 * */
+	public static char[] addNewLine(char[] aChar, String type) {
+		return (new String(aChar) + switch (type) {
+			case "Macintosh", "macOS" -> "\r";
+			// I don't add Linux and Unix because the default branch have the same line return
+			case "Windows" -> "\r\n";
+			default -> "\n"; // Includes Linux and Unix...
+		}).toCharArray();
+	}
+
+	/**
+	 * Adds a new line to a string with the type of the
+	 * new line, you can select Linux or Unix, Macintosh or macOS and Windows.
+	 *
+	 * @param strBuilder the string builder to add a new line
+	 * @param type the type of the new line
+	 *
+	 * @return the string builder with the new line added
+	 * */
+	public static StringBuilder addNewLine(StringBuilder strBuilder, String type) {
+		return strBuilder.append(switch (type) {
+			case "Macintosh", "macOS" -> "\r";
+			// I don't add Linux and Unix because the default branch have the same line return
+			case "Windows" -> "\r\n";
+			default -> "\n"; // Includes Linux and Unix...
+		});
+	}
 
 }

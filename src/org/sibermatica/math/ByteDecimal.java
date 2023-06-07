@@ -19,6 +19,8 @@ import static org.sibermatica.util.Cast.toByte;
  * */
 public class ByteDecimal {
 
+    /* -- Variables -- */
+
     /**
      * The decimal part of the ByteDecimal.
      */
@@ -29,8 +31,10 @@ public class ByteDecimal {
      */
     public final byte integer;
 
+    /* -- Constructors -- */
+
     /**
-     * It cannot be instantiated.
+     * Don't let anyone instance this class.
      */
     private ByteDecimal(byte integer, byte decimal) {
         this.integer = 0;
@@ -46,6 +50,8 @@ public class ByteDecimal {
         integer = toByte(extractInteger(value));
         decimal = toByte(extractDecimal(value));
     }
+
+    /* HashCode, equals, toString and other methods... */
 
     /**
      * Converts the ByteDecimal to a String.

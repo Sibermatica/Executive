@@ -17,20 +17,20 @@ import java.util.Objects;
  * */
 public abstract class MailServer {
 
-    /* Variables */
+    /* -- Variables -- */
 
     /**
-     * Existings servers.
+     * Existing servers.
      * @see java.util.ArrayList
      * */
     private static final ArrayList<ServerSocket> servers = new ArrayList<>();
 
     /**
-     * Server data.  It storaged in a HashMap<String, Object> (JSON Structure).
+     * Server data.  It storage in a Map<String, Object> (JSON Structure).
      * */
     private final Map<String, Object> server_data = new HashMap<>();
 
-    /* Constructors */
+    /* -- Constructors -- */
 
     /**
      * Initializes a new mail-server.
@@ -43,7 +43,7 @@ public abstract class MailServer {
         this.server_data.put("host", host);
     }
 
-    /* Methods */
+    /* -- Methods -- */
 
     /**
      * Validates servers.  It uses the server data to, internally, validate the server.
@@ -53,7 +53,7 @@ public abstract class MailServer {
     public static boolean validate(MailServer server) {
         /* Parsing data... */
 
-        Map<String, Object> server_data = server.get();
+        Map<String, Object> server_data = server.getMappings();
 
         if (!(server_data instanceof HashMap) || server_data.isEmpty())
             return false;
@@ -65,15 +65,12 @@ public abstract class MailServer {
 
         /* With the got information, validate them */
 
-        for (ServerSocket serverSocket_server : servers) {
-            if (host.equals(serverSocket_server.getInetAddress().getHostAddress())
-                && port.equals(serverSocket_server.getLocalPort())
-            ) {
-                return true;
-            }
+        for (ServerSocket serverSocket : servers) {
+            return host.equals(serverSocket.getInetAddress().getHostAddress())
+                && port.equals(serverSocket.getLocalPort());
         }
 
-        /* Server isn't valid */
+        /* -- Server isn't valid -- */
         return false;
     }
 
@@ -99,7 +96,7 @@ public abstract class MailServer {
      * @param index The (integer) index of the server.
      * @return The server.
      * */
-    public static ServerSocket get(int index) {
+    public static ServerSocket getMappings(int index) {
         return servers.get(index);
     }
 
@@ -108,7 +105,7 @@ public abstract class MailServer {
      *
      * @return The server server data.
      * */
-    public Map<String, Object> get() {
+    public Map<String, Object> getMappings() {
         return server_data;
     }
 

@@ -38,6 +38,13 @@ public class Math {
      */
     private static final double RADIANS_TO_DEGREES = 57.29577951308232;
 
+    /**
+     * Gets the PI number with a specified level of precision.
+     *
+     * @param precision the level of precision
+     * @apiNote Only recommended for high performance computers.
+     * @return PI number
+     * */
     public static double getPI(long precision) {
         double result = 0;
 

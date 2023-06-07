@@ -4,7 +4,6 @@ import org.sibermatica.network.mail.Email;
 import org.sibermatica.network.mail.server.MailServer;
 
 import java.net.Socket;
-import java.util.Map;
 
 /**
  * <h1>MailSender</h1>
@@ -15,7 +14,7 @@ import java.util.Map;
  * */
 public abstract class MailSender {
 
-    /* Methods */
+    /* -- Methods -- */
 
     /**
      * Sends an email.
@@ -29,7 +28,7 @@ public abstract class MailSender {
     public static void send(Email email, MailServer server)
             throws UnsupportedOperationException {
 
-        /* Check server validation */
+        /* -- Checksum -- */
 
         if (!MailServer.validate(server))
             throw new IllegalArgumentException("Invalid server data");
@@ -37,16 +36,16 @@ public abstract class MailSender {
         if (email == null)
             throw new IllegalArgumentException("Email cannot be null");
 
-        if (email.getFrom().contains("\\")
-                || email.getTo().contains("\\")
-                || email.getSubject().contains("\\"))
+        if (email.from().contains("\\")
+                || email.to().contains("\\")
+                || email.subject().contains("\\"))
             throw new IllegalArgumentException("Email cannot contain slash bars");
 
         /* -------------------------------- */
 
         /* Sets server properties */
-        int port = (int) server.get().get("port");
-        String host = (String) server.get().get("host");
+        int port = (int) server.getMappings().get("port");
+        String host = (String) server.getMappings().get("host");
 
         /* Sender thread */
         try {
@@ -54,10 +53,10 @@ public abstract class MailSender {
             Socket socket = new Socket(host, port);
 
             /* Email message header */
-            byte[] bytes = (email.getFrom() + "\\" +
-                    email.getTo() + "\\" +
-                    email.getSubject() + ":\n" +
-                    email.getBody().toString()).getBytes();
+            byte[] bytes = (email.from() + "\\" +
+                    email.to() + "\\" +
+                    email.subject() + ":\n" +
+                    email.body()).getBytes();
 
             /* Writing and sending mail */
             socket.getOutputStream().write(bytes);

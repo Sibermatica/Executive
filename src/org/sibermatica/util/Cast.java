@@ -41,11 +41,11 @@ public final class Cast {
     public static byte toByte(int x) {
         byte result = (byte) x;
 
-        // Checksum
+        /* -- Checksum -- */
         if (!toString(x).equals(toString(result)))
-            throw new NumberFormatException("cannot convert");
+            throw new NumberFormatException("byte limit rebased");
 
-        return result;
+        return result; // Return result
     }
 
     public static short toShort(int x) throws NumberFormatException {
@@ -73,6 +73,17 @@ public final class Cast {
     public static <T> T[] toArray(T[] type, Object[] array) {
         // Make a new array of a's runtime type, but my contents:
         return (T[]) Arrays.copyOf(array, array.length, type.getClass());
+    }
+
+    /**
+     * Converts an array of any type to another array type.
+     *
+     * @param array The array to convert.
+     * @param type The type to convert to.
+     * @return The converted array.
+     * */
+    public static <T> T[] toSecureArray(T[] type, Object[] array) {
+        return Arrays.stream(array).toList().toArray(type);
     }
 
 }
