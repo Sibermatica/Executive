@@ -39,50 +39,126 @@ public class StringUtils {
 		
 		public static class Foreground {
 
-			/* Variables */
+			/* -- Variables -- */
 
+			/**
+			 * The color black represented in ASCII Code
+			 * */
 		    public static final String BLACK = "\u001B[30m";
+
+			/**
+			 * The color red represented in ASCII Code
+			 * */
 		    public static final String RED = "\u001B[31m";
+
+			/**
+			 * The color green represented in ASCII Code
+			 * */
 		    public static final String GREEN = "\u001B[32m";
+
+			/**
+			 * The color yellow represented in ASCII Code
+			 * */
 		    public static final String YELLOW = "\u001B[33m";
+
+			/**
+			 * The color blue represented in ASCII Code
+			 * */
 		    public static final String BLUE = "\u001B[34m";
+
+			/**
+			 * The color purple represented in ASCII Code
+			 * */
 		    public static final String PURPLE = "\u001B[35m";
+
+			/**
+			 * The color cyan represented in ASCII Code
+			 * */
 		    public static final String CYAN = "\u001B[36m";
+
+			/**
+			 * The color white represented in ASCII Code
+			 * */
 		    public static final String WHITE = "\u001B[37m";
 
-			/* Methods */
+			/* -- Methods -- */
 
-			// Ayo! There a lot of methods.
-			// Please help me to comment them.
-		    
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 		    public static String insertBLACK(String text) {
 		    	return BLACK.concat(text) + RESET;
 		    }
-		    
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 		    public static String insertRED(String text) {
 		    	return RED.concat(text) + RESET;
 		    }
-		    
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 		    public static String insertGREEN(String text) {
 		    	return GREEN.concat(text) + RESET;
 		    }
-		    
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 		    public static String insertYELLOW(String text) {
 		    	return YELLOW.concat(text) + RESET;
 		    }
-		    
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 		    public static String insertCYAN(String text) {
 		    	return CYAN.concat(text) + RESET;
 		    }
-		    
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 		    public static String insertWHITE(String text) {
 		    	return WHITE.concat(text) + RESET;
 		    }
-		    
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 		    public static String insertBLUE(String text) {
 		    	return BLUE.concat(text) + RESET;
 		    }
-		    
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 		    public static String insertPURPLE(String text) {
 		    	return PURPLE.concat(text) + RESET;
 		    }
@@ -91,49 +167,127 @@ public class StringUtils {
 
 	    public static class Background {
 
-			/* Variables */
+			/* -- Variables -- */
 
+			/**
+			 * The color black represented in ASCII Code
+			 * */
 	        public static final String BLACK = "\u001B[40m";
+
+			/**
+			 * The color red represented in ASCII Code
+			 * */
 	        public static final String RED = "\u001B[41m";
+
+			/**
+			 * The color green represented in ASCII Code
+			 * */
 	        public static final String GREEN = "\u001B[42m";
+
+			/**
+			 * The color yellow represented in ASCII Code
+			 * */
 	        public static final String YELLOW = "\u001B[43m";
+
+			/**
+			 * The color blue represented in ASCII Code
+			 * */
 	        public static final String BLUE = "\u001B[44m";
+
+			/**
+			 * The color purple represented in ASCII Code
+			 * */
 	        public static final String PURPLE = "\u001B[45m";
+
+			/**
+			 * The cyan black represented in ASCII Code
+			 * */
 	        public static final String CYAN = "\u001B[46m";
+
+			/**
+			 * The color white represented in ASCII Code
+			 * */
 	        public static final String WHITE = "\u001B[47m";
 
-			/* Methods */
+			/* -- Methods -- */
 
-			// Not now...
 
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 	        public static String insertBLACK(String text) {
 	        	return BLACK.concat(text) + RESET;
 	        }
-	        
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 	        public static String insertRED(String text) {
 	        	return RED.concat(text) + RESET;
 	        }
-	        
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 	        public static String insertGREEN(String text) {
 	        	return GREEN.concat(text) + RESET;
 	        }
-	        
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 	        public static String insertYELLOW(String text) {
 	        	return YELLOW.concat(text) + RESET;
 	        }
-	        
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 	        public static String insertCYAN(String text) {
 	        	return CYAN.concat(text) + RESET;
 	        }
-	        
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 	        public static String insertWHITE(String text) {
 	        	return WHITE.concat(text) + RESET;
 	        }
-	        
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 	        public static String insertBLUE(String text) {
 	        	return BLUE.concat(text) + RESET;
 	        }
-	        
+
+			/**
+			 * This method colorizes a string with ASCII escape sequences
+			 *
+			 * @param text the string to color
+			 * @return colorized string
+			 * */
 	        public static String insertPURPLE(String text) {
 	        	return PURPLE.concat(text) + RESET;
 	        }
