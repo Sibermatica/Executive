@@ -5,5 +5,10 @@ package org.sibermatica.annotations;
  * This annotation is used to mark a test method.
  * */
 public @interface Test {
+
+    /**
+     * Defines if the method can fail.
+     * Defaults to true.
+     * */
     boolean canFail() default true;
 }

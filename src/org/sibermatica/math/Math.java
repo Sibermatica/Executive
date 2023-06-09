@@ -11,7 +11,17 @@ import static java.lang.Math.*;
  * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
  * @since 1.1
  * */
-public class Math {
+public final class Math {
+
+    /* -- Constructors -- */
+
+    /**
+     * Don't let anyone instance this class
+     * */
+    private Math() {
+    }
+
+    /* -- Variables -- */
 
     /**
      * The {@code double} value that is closer than any other to
@@ -37,6 +47,8 @@ public class Math {
      * angular value in degrees.
      */
     private static final double RADIANS_TO_DEGREES = 57.29577951308232;
+
+    /* -- Methods -- */
 
     /**
      * Gets the PI number with a specified level of precision.

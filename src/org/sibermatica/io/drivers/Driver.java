@@ -3,6 +3,7 @@ package org.sibermatica.io.drivers;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * <h1>Driver</h1>
@@ -15,6 +16,8 @@ import java.io.Serializable;
  * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
  * */
 public abstract class Driver implements Serializable {
+
+    /* -- Variables -- */
 
     /**
      * Device output.
@@ -37,6 +40,8 @@ public abstract class Driver implements Serializable {
      * */
     protected String model;
 
+    /* -- Methods -- */
+
     /**
      * Runs the driver.
      * */
@@ -46,6 +51,8 @@ public abstract class Driver implements Serializable {
      * Stop the driver.
      * */
     public abstract void stop();
+
+    /* -- Getters & Setters -- */
 
     /**
      * Returns the device port.
@@ -61,5 +68,30 @@ public abstract class Driver implements Serializable {
      * */
     public String getModel() {
         return model;
+    }
+
+    /* HashCode, equals, toString and other methods... */
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return port == driver.port && Objects.equals(out, driver.out) && Objects.equals(in, driver.in) && Objects.equals(model, driver.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(out, in, port, model);
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "out=" + out +
+                ", in=" + in +
+                ", port=" + port +
+                ", model='" + model + '\'' +
+                '}';
     }
 }

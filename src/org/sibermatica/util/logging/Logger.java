@@ -32,14 +32,12 @@ public final class Logger {
      * */
     private String format = DEFAULT_FORMAT;
 
-    /* Constructors */
+    /* -- Constructors -- */
 
     /**
      * Generates a new Logger instance.
      * */
-    public Logger() {
-
-    }
+    public Logger() {}
 
     /**
      * Generates a new Logger instance, but with the specified
@@ -51,7 +49,7 @@ public final class Logger {
         this.format = format;
     }
 
-    /* Methods */
+    /* -- Methods -- */
 
     /**
      * This method is used to log system console.
@@ -320,9 +318,25 @@ public final class Logger {
     /**
      * Sets the specified logging format.
      * @param format The new logging format
+     * @return Logger instance
      * */
     public Logger format(String format) {
         this.format = format;
         return this;
+    }
+
+    /**
+     * Adds a new line to the system console
+     * @param type the indentation or format of the line
+     * */
+    public void newLine(String type) {
+        System.out.println(StringUtils.addNewLine("", type));
+    }
+
+    /**
+     * Adds a new line to the system console
+     * */
+    public void newLine() {
+        System.out.println(StringUtils.NewLine.UNIX.getNewLine());
     }
 }

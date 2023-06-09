@@ -16,6 +16,8 @@ public interface Translatable {
 
     /**
      * Translates this object to the locale language.
+     *
+     * @return Translated object
      * */
     String translate();
 

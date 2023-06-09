@@ -18,14 +18,35 @@ package org.sibermatica.io.binary;
  * */
 public abstract class Binary {
 
+    /* -- Parsing --------
+       -------- Methods -- */
+
+    /**
+     * Parses the given value and converts into a binary representation
+     *
+     * @param b the value to parse
+     * @return the binary representation
+     * */
     public static boolean parse(boolean b) {
         return b;
     }
 
+    /**
+     * Parses the given value and converts into a binary representation
+     *
+     * @param c the value to parse
+     * @return the binary representation
+     * */
     public static boolean parse(char c) {
-        return c == '1';
+        return parse(Integer.parseInt(String.valueOf(c)));
     }
 
+    /**
+     * Parses the given value and converts into a binary representation
+     *
+     * @param i the value to parse
+     * @return the binary representation
+     * */
     public static boolean parse(int i) {
         return i > 0;
     }

@@ -21,21 +21,10 @@ import java.util.Objects;
  */
 public record Email(String from, String to, String subject, StringBuilder body) {
 
-    /* -- Variables -- */
-
-    /**
-     * Instances a new Email class
-     */
-
-    /* -- Constructors -- */
-    public Email {
-    }
-
     /* -- Getters -- */
 
     /**
      * Returns the email address what come from.
-     *
      * @return the email address what come from.
      */
     @Override
@@ -45,7 +34,6 @@ public record Email(String from, String to, String subject, StringBuilder body) 
 
     /**
      * Returns the email address to send email-data.
-     *
      * @return the email address to send email-data.
      */
 
@@ -56,7 +44,6 @@ public record Email(String from, String to, String subject, StringBuilder body) 
 
     /**
      * Returns the email subject.
-     *
      * @return the email subject.
      */
 
@@ -67,7 +54,6 @@ public record Email(String from, String to, String subject, StringBuilder body) 
 
     /**
      * Returns the email body.
-     *
      * @return the email body.
      */
 
@@ -80,6 +66,7 @@ public record Email(String from, String to, String subject, StringBuilder body) 
 
     /**
      * Creates a new EmailBuilder.
+     * @return a new EmailBuilder
      */
     public static Builder of() {
         return new Builder();

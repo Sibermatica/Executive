@@ -28,7 +28,7 @@ public abstract class MailSender {
     public static void send(Email email, MailServer server)
             throws UnsupportedOperationException {
 
-        /* -- Checksum -- */
+        /* Checksum */
 
         if (!MailServer.validate(server))
             throw new IllegalArgumentException("Invalid server data");
@@ -70,5 +70,7 @@ public abstract class MailSender {
             throw new UnsupportedOperationException(e.getMessage());
         }
     }
+
+
 
 }

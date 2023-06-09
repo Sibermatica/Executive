@@ -20,14 +20,17 @@ public class StringUtils {
 	 * */
 	public static class Color {
 
-		/* Variables */
+		/* -- Variables -- */
 		
+		/**
+		 * This variable it's used to reset string colors.
+		 * */
 		public static final String RESET = "\u001B[0m";
 
-		/* Methods */
+		/* -- Methods -- */
 
 		/**
-		 * This methods it's used to reset color to default value.
+		 * These methods it's used to reset color to default value.
 		 * @param text the text to reset color
 		 * @return No-color string
 		 * */
@@ -35,49 +38,49 @@ public class StringUtils {
 			return RESET.concat(text);
 		}
 
-		/* More Inner classes */
+		/* More inner-classes */
 		
 		public static class Foreground {
 
 			/* -- Variables -- */
 
 			/**
-			 * The color black represented in ASCII Code
+			 * The color black represented in ANSI escape codes
 			 * */
 		    public static final String BLACK = "\u001B[30m";
 
 			/**
-			 * The color red represented in ASCII Code
+			 * The color red represented in ANSI escape codes
 			 * */
 		    public static final String RED = "\u001B[31m";
 
 			/**
-			 * The color green represented in ASCII Code
+			 * The color green represented in ANSI escape codes
 			 * */
 		    public static final String GREEN = "\u001B[32m";
 
 			/**
-			 * The color yellow represented in ASCII Code
+			 * The color yellow represented in ANSI escape codes
 			 * */
 		    public static final String YELLOW = "\u001B[33m";
 
 			/**
-			 * The color blue represented in ASCII Code
+			 * The color blue represented in ANSI escape codes
 			 * */
 		    public static final String BLUE = "\u001B[34m";
 
 			/**
-			 * The color purple represented in ASCII Code
+			 * The color purple represented in ANSI escape codes
 			 * */
 		    public static final String PURPLE = "\u001B[35m";
 
 			/**
-			 * The color cyan represented in ASCII Code
+			 * The color cyan represented in ANSI escape codes
 			 * */
 		    public static final String CYAN = "\u001B[36m";
 
 			/**
-			 * The color white represented in ASCII Code
+			 * The color white represented in ANSI escape codes
 			 * */
 		    public static final String WHITE = "\u001B[37m";
 
@@ -170,42 +173,42 @@ public class StringUtils {
 			/* -- Variables -- */
 
 			/**
-			 * The color black represented in ASCII Code
+			 * The color black represented in ANSI escape codes
 			 * */
 	        public static final String BLACK = "\u001B[40m";
 
 			/**
-			 * The color red represented in ASCII Code
+			 * The color red represented in ANSI escape codes
 			 * */
 	        public static final String RED = "\u001B[41m";
 
 			/**
-			 * The color green represented in ASCII Code
+			 * The color green represented in ANSI escape codes
 			 * */
 	        public static final String GREEN = "\u001B[42m";
 
 			/**
-			 * The color yellow represented in ASCII Code
+			 * The color yellow represented in ANSI escape codes
 			 * */
 	        public static final String YELLOW = "\u001B[43m";
 
 			/**
-			 * The color blue represented in ASCII Code
+			 * The color blue represented in ANSI escape codes
 			 * */
 	        public static final String BLUE = "\u001B[44m";
 
 			/**
-			 * The color purple represented in ASCII Code
+			 * The color purple represented in ANSI escape codes
 			 * */
 	        public static final String PURPLE = "\u001B[45m";
 
 			/**
-			 * The cyan black represented in ASCII Code
+			 * The cyan black represented in ANSI escape codes
 			 * */
 	        public static final String CYAN = "\u001B[46m";
 
 			/**
-			 * The color white represented in ASCII Code
+			 * The color white represented in ANSI escape codes
 			 * */
 	        public static final String WHITE = "\u001B[47m";
 
@@ -296,6 +299,31 @@ public class StringUtils {
 		
 	}
 
+	public enum NewLine {
+		MACHINTOSH("Machintosh"), MACOS("maxOS"), UNIX("Unix"), LINUX("Linux"), WINDOWS("Windows"), MS_DOS("DOS");
+
+		private String name;
+
+		NewLine(String name) {
+			this.name = name;
+		}
+
+		@Override
+		public String toString() {
+			return this.name;
+		}
+
+		public String getNewLine() {
+			return StringUtils.addNewLine("", this.toString());
+		}
+
+		public String getNewLine(String str) {
+			return StringUtils.addNewLine(str, this.toString());
+		}
+	}
+
+	/* -- Methods -- */
+
 	/**
 	 * Quits all the white spaces in a string.
 	 *
@@ -310,6 +338,8 @@ public class StringUtils {
 	 * Add padding to a string.
 	 *
 	 * @param text the string to pad
+	 * @param maxLength the maximum length of the string
+	 * @param fillString the string to fill with
 	 * @return the string with padding
 	 * */
 	public static String padStart(String text, int maxLength, String fillString) {
@@ -324,6 +354,8 @@ public class StringUtils {
 	 * Add padding to a string.
 	 *
 	 * @param text the string to pad
+	 * @param maxLength the maximum length of the string
+	 * @param fillString the string to fill with
 	 * @return the string with padding
 	 * */
 	public static String padEnd(String text, int maxLength, String fillString) {
@@ -428,6 +460,22 @@ public class StringUtils {
 			case "Windows" -> "\r\n";
 			default -> "\n"; // Includes Linux and Unix...
 		});
+	}
+
+	/**
+	 * Adds a new line to a string with the type of the
+	 * new line, you can select Linux or Unix, Macintosh or macOS and Windows.
+	 *
+	 * @param type the type of the new line
+	 * @return the char array with the new line added
+	 * */
+	public static String addNewLine(String type) {
+		return switch (type) {
+			case "Macintosh", "macOS" -> "\r";
+			// I don't add Linux and Unix because the default branch have the same line return
+			case "Windows" -> "\r\n";
+			default -> "\n"; // Includes Linux and Unix...
+		};
 	}
 
 }

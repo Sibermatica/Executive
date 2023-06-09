@@ -18,10 +18,18 @@ public class OptionSpec {
 
     private final Object value;
 
+    /**
+     * Instances a new OptionSpec
+     * @param value the key of the value
+     * */
     public OptionSpec(Object value) {
         this.value = value;
     }
 
+    /**
+     * Gets the value on the internal mappings
+     * @return the object
+     * */
     public Object getValue() {
         return value;
     }

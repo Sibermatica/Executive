@@ -14,12 +14,16 @@ import java.nio.charset.*;
  * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
  * @since 1.0
  */
-public class IOUtils {
+public final class IOUtils {
+
+    /* -- Constructors -- */
 
     /**
-     * It cannot be instantiated.
+     * Don't let anyone instance this class.
      */
     private IOUtils() {}
+
+    /* -- Converters -- */
 
     /**
      * Convert a String to an InputStream

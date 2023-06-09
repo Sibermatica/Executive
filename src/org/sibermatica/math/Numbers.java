@@ -1,11 +1,28 @@
 package org.sibermatica.math;
 
-public class Numbers {
+/**
+ * <h1>Numbers</h1>
+ * This class allow modifying numbers extracting decimal values
+ * and <i>integer</i> values.  Above all, it's purpose is to manage
+ * floating point numbers and double values.  This feature is useful
+ * for some special cases where the number values are represented
+ * as floats.
+ *
+ * @since 1.0
+ * @author <a href="mailto:cirodeveloper@sibermatica.org">Ciro Alejo Diaz</a>
+ * @see java.lang.Number
+ * @see java.lang.Integer
+ * */
+public final class Numbers {
+
+    /* -- Constructors -- */
 
     /**
-     * It cannot be instantiated.
+     * Don't let anyone instance this class.
      */
     private Numbers() {}
+
+    /* -- Methods -- */
 
     /**
      * Extracts the decimal part of a number.

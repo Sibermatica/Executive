@@ -118,7 +118,7 @@ public final class OptionParser {
 
     /**
      * Returns the value of a map key.
-     *
+     * @return the value of a map key
      * @param key the key to get the value for.
      * */
     public Object get(String key) {
@@ -127,7 +127,7 @@ public final class OptionParser {
 
     /**
      * Returns the value of a map key.
-     *
+     * @return the value of a map key
      * @param key the key to get the value for.
      * */
     public Object get(OptionSpec key) {
@@ -139,7 +139,7 @@ public final class OptionParser {
      * in {@linkplain org.sibermatica.jah.util.OptionSpec}.
      *
      * @return a new instance of OptionSpec.
-     *
+     * @param key the name of the option
      * @see org.sibermatica.jah.util.OptionSpec
      * */
     public OptionSpec accepts(String key) {
@@ -152,6 +152,8 @@ public final class OptionParser {
      *
      * @param key the key to get the value for.
      * @param default_obj the value to return if the key is null, invalid or empty.
+     *
+     * @return the value of the map key or default value if the key is null
      * */
     public Object getOrDefault(String key, Object default_obj) {
         return map.getOrDefault(key, default_obj);
@@ -163,6 +165,8 @@ public final class OptionParser {
      *
      * @param key the key to get the value for.
      * @param default_obj the value to return if the key is null, invalid or empty.
+     *
+     * @return the value of the map key or default value if the key is null
      * */
     public Object getOrDefault(OptionSpec key, Object default_obj) {
         return getOrDefault(key.toString(), default_obj);

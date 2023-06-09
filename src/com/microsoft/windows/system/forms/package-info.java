@@ -1,5 +1,5 @@
 /**
- * {@code System.Windows} is a Windows platform that it is used to run
+ * {@code System.Windows.Forms} is a Windows platform that it is used to run
  * Windows applications and gui interfaces.
  * <br>It contains the following classes:
  * <ul>

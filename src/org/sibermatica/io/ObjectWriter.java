@@ -24,6 +24,11 @@ import java.nio.charset.StandardCharsets;
 
 public class ObjectWriter<T> {
 
+    /* -- Constructors -- */
+
+    public ObjectWriter() {}
+
+    /* -- I/O Methods -- */
 
     /**
      * The method {@code write} it used to write an object instance data to an output stream.
@@ -40,6 +45,8 @@ public class ObjectWriter<T> {
         if (object == null) /* Manually assert, it can also be done with `assert object != null` */
             throw new NullPointerException("Object is null");
 
+        /* Possible error thread */
+
         try {
 
             /* Convert the String buffer to a byte array */
@@ -52,6 +59,8 @@ public class ObjectWriter<T> {
             /* If an exception occurs we throw a IOException with the exception message */
             throw new IOException(e.getMessage());
         }
+        /* --------------------------------------------- */
+
     }
 
 }

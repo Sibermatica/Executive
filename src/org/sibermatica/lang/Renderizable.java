@@ -22,6 +22,7 @@ public interface Renderizable {
 
     /**
      * Sets the visibility of the object.
+     * @param visible Visibility of the object
      * */
     void setVisibility(boolean visible);
 

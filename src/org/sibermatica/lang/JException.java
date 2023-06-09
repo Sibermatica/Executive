@@ -16,6 +16,8 @@ import org.sibermatica.util.StringUtils;
 public class JException
         extends java.lang.Throwable {
 
+    /* -- Variables -- */
+
     /**
      * The name of the exception.
      */
@@ -26,8 +28,12 @@ public class JException
      */
     private final String[] possibleCauses;
 
+    /* -- Constructors -- */
+
     /**
      * Creates a new Exception with the specified detail message and cause.
+     * @param possibleCauses the possible causes of the exception
+     * @param exceptionName the name of the exception
      */
     @CustomException
     public JException(String[] possibleCauses, String exceptionName) {
@@ -35,16 +41,21 @@ public class JException
         this.possibleCauses = possibleCauses;
     }
 
+    /**
+     * Instanciates a new custom exception with
+     * the specified detail message and the exception name.
+     * @param exceptionName the exception name
+     * */
     @CustomException
     public JException(String exceptionName) {
         this.possibleCauses = new String[]{};
         this.exceptionName = exceptionName;
     }
 
+    /* -- Methods -- */
 
     /**
      * Shows the exception message, causes and name.
-     *
      * @see Exception#printStackTrace()
      */
 	public void printStackTrace() {
@@ -93,12 +104,13 @@ public class JException
      * Return the parent of the exception.
      * @return the parent of the exception
      */
-    public Class<?> getParent() {
+    public final Class<?> getParent() {
     	return JException.class;
     }
 
     /**
      * Enum the possible causes of the exception.
+     * @return the possible causes of the exception
      */
     public String[] enumPossibleCauses() {
         return possibleCauses;

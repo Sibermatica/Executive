@@ -94,8 +94,4 @@ public class Event implements Eventualizable {
         return LOG_EVENT == event.LOG_EVENT && Objects.equals(event_name, event.event_name) && Objects.equals(event_description, event.event_description) && Objects.equals(LOG_LEVEL, event.LOG_LEVEL);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(event_name, event_description, LOG_EVENT, LOG_LEVEL);
-    }
 }

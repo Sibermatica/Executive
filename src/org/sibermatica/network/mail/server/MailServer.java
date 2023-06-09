@@ -47,7 +47,7 @@ public abstract class MailServer {
 
     /**
      * Validates servers.  It uses the server data to, internally, validate the server.
-     *
+     * @param server the server to validate
      * @return true if the server is valid.
      * */
     public static boolean validate(MailServer server) {

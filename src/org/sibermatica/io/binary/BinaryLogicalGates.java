@@ -12,8 +12,13 @@ import org.sibermatica.math.Numbers;
  * */
 public final class BinaryLogicalGates {
 
+    /* -- Constructors -- */
+
     /** Don't let anyone instance this class */
     private BinaryLogicalGates() {}
+
+    /* -- Methods --------------
+       -------- Logical Gates -- */
 
     /**
      * Returns the logical AND of two boolean values.
@@ -79,10 +84,9 @@ public final class BinaryLogicalGates {
     }
 
     /**
-     * Returns the logical AND of a array of boolean values.
+     * Returns the logical AND of an array of boolean values.
      *
      * @param x the array of booleans.
-     *
      * @return the logical AND of boolean array values.
      * */
     public static boolean and(boolean[] x) {
@@ -105,7 +109,7 @@ public final class BinaryLogicalGates {
 
     /**
      * Returns the logical OR of two integer values.
-     *
+     * @return the logical OR of two integer values
      * @param a the first integer value to compare.
      * */
     public static int or(int a, int b) {
@@ -114,7 +118,7 @@ public final class BinaryLogicalGates {
 
     /**
      * Returns the logical OR of two long values.
-     *
+     * @return the logical OR of two long values
      * @param a the first "long" value to compare.
      * */
     public static long or(long a, long b) {
@@ -123,7 +127,7 @@ public final class BinaryLogicalGates {
 
     /**
      * Returns the logical OR of two double values.
-     *
+     * @return the logical OR of two double values
      * @param a the first double value to compare.
      * */
     public static double or(double a, double b) {
@@ -136,7 +140,9 @@ public final class BinaryLogicalGates {
     /**
      * Returns the logical OR of two float values.
      *
+     * @return the logical OR of two float values
      * @param a the first float value to compare.
+     * @param b the second float value to compare.
      * */
     public static float or(float a, float b) {
         return (float) BinaryLogicalGates.or(a, (double) b);
