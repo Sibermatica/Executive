@@ -30,8 +30,8 @@ public final class AssertTag {
             case "NotNull" -> value != null; // The value, obligatory has to be non-null.
             case "Nullable" -> true; // The value can be null.
 
-            /* Invalid tag name, Search for tags on net.cybermatics.annotations */
-            default -> throw new IllegalArgumentException("Illegal tag name: " + tag.getSimpleName() + "");
+            /* Invalid tag name, Search for tags on org.sibermatica.annotations */
+            default -> throw new IllegalArgumentException("Illegal tag name: " + tag.getSimpleName());
         };
     }
 
