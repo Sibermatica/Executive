@@ -75,7 +75,7 @@ public final class Logger {
         String formatted = this.format;
 
         /* Hours */
-        formatted = formatted.replace("${HOUR_24}", Integer.valueOf(timestamp.getHours()).toString());
+        formatted = formatted.replace("${HOUR_24}", StringUtils.padStart(Integer.toString(timestamp.getHours()), 2, "0"));
         formatted = formatted.replace("${HOUR_12}", (timestamp.getHours() - 12 < 0 ? (timestamp.getHours() + " AM") : (timestamp.getHours() - 12 + " PM")));
 
         /* Minutes */
