@@ -23,7 +23,7 @@ import org.sibermatica.util.StringUtils;
  * @see java.lang.Byte
  * @see java.lang.Long
  * @since 1.0
- * @deprecated This class manages high quantities of bytes, and it is low-performance because it uses long values
+ * @deprecated This class manages high quantities of bytes, and it is low-performance because it uses long values. But isn't for removal, you can use it without preoccupations.
  * */
 @Deprecated( since = "1.4" )
 public final class Data {
