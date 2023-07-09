@@ -1,6 +1,7 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 /**
+ * <h1>ParserConfiguration</h1>
  * Configuration base object for parsers. The configuration is immutable.
  */
 public class ParserConfiguration {

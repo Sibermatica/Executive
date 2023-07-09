@@ -1,4 +1,4 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * <h1>XMLParserConfiguration</h1>
  * Configuration object for the XML parser. The configuration is immutable.
  */
 public class XMLParserConfiguration extends ParserConfiguration {

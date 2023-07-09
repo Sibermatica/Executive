@@ -1,4 +1,4 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 import static java.lang.String.format;
 

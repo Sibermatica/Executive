@@ -1,9 +1,10 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 import java.util.Enumeration;
 import java.util.Properties;
 
 /**
+ * <h1>Property</h1>
  * Converts a Property file data into JSONObject and back.
  */
 public class Property {

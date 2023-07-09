@@ -1,4 +1,4 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;

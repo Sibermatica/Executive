@@ -1,4 +1,4 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 import java.io.*;
 import java.nio.charset.Charset;

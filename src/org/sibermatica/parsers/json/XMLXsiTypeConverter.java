@@ -1,6 +1,7 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 /**
+ * <h1>XMLXsiTypeConverter</h1>
  * Type conversion configuration interface to be used with xsi:type attributes.
  * <pre>
  * <b>XML Sample</b>

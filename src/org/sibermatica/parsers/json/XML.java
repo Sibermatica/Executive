@@ -1,4 +1,4 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 import java.io.Reader;
 import java.io.StringReader;
@@ -7,6 +7,7 @@ import java.math.BigInteger;
 import java.util.Iterator;
 
 /**
+ * <h1>XML</h1>
  * This provides static methods to convert an XML text into a JSONObject, and to
  * covert a JSONObject into an XML text.
  */

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.sibermatica.json.internal;
+package org.sibermatica.parsers.json.internal;
 
 /**
  * Build configuration for Gson. This file is automatically populated by

@@ -1,8 +1,9 @@
-package org.sibermatica.json;
+package org.sibermatica.parsers.json;
 
 import java.io.Reader;
 
 /**
+ * <h1>XMLTokener</h1>
  * The XMLTokener extends the JSONTokener to provide additional methods
  * for the parsing of XML texts.
  */
