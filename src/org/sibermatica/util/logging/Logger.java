@@ -329,6 +329,7 @@ public final class Logger {
      * Adds a new line to the system console
      * @param type the indentation or format of the line
      * */
+    @Deprecated( forRemoval = true )
     public void newLine(StringUtils.NewLine type) {
         System.out.println(StringUtils.addNewLine("", type));
     }
@@ -336,6 +337,7 @@ public final class Logger {
     /**
      * Adds a new line to the system console
      * */
+    @Deprecated( forRemoval = true )
     public void newLine() {
         System.out.println(StringUtils.NewLine.UNIX.getNewLine());
     }
